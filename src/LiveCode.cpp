@@ -32,7 +32,7 @@ void glsl(
 	vector<string> sources;
 
 	try {
-		pp.addSearchDirectory( getShadersPath( "Common" ) );
+		pp.addSearchDirectory( getAppSupportWorkingSessionShadersPath( "Common" ) );
 		sources.emplace_back( pp.parse( vertex ) );
 		sources.emplace_back( pp.parse( fragment ) );
 		sources.emplace_back( pp.parse( geometry ) );
@@ -72,7 +72,7 @@ void glsl(
 	vector<string> sources;
 
 	try {
-		pp.addSearchDirectory( getShadersPath( "Common" ) );
+		pp.addSearchDirectory( getAppSupportWorkingSessionShadersPath( "Common" ) );
 		sources.emplace_back( pp.parse( vertex ) );
 		sources.emplace_back( pp.parse( fragment ) );
 		format.vertex( sources[0] ).fragment( sources[1] );
@@ -109,7 +109,7 @@ void glsl(
 	vector<string> sources;
 
 	try {
-		pp.addSearchDirectory( getShadersPath( "Common" ) );
+		pp.addSearchDirectory( getAppSupportWorkingSessionShadersPath( "Common" ) );
 		sources.emplace_back( pp.parse( vertex ) );
 		format.vertex( sources[0] );
 		result = gl::GlslProg::create( format );
